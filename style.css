@@ -1,0 +1,17 @@
+body { 
+  font-family: Arial, sans-serif; 
+  margin:0; 
+  padding:0; 
+  background: url('images/background.jpg') no-repeat center center fixed; 
+  background-size: cover; 
+}
+header { background: rgba(255, 204, 102, 0.9); padding:20px; text-align:center; border-bottom: 3px solid #5a2d0c; }
+header h1 { margin:0; color:#5a2d0c; text-shadow: 1px 1px #fff; }
+nav { margin-top:10px; }
+nav a { margin:0 15px; text-decoration:none; color:#5a2d0c; font-weight:bold; }
+section { padding:40px 20px; text-align:center; background: rgba(255, 248, 240, 0.9); margin:20px; border-radius:10px; }
+.services, .gallery, .contact { background: rgba(249, 243, 231, 0.95); margin:20px 0; border-radius:10px; padding:20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+h2 { color:#5a2d0c; }
+footer { background: rgba(255, 204, 102, 0.9); text-align:center; padding:15px; margin-top:20px; border-top: 3px solid #5a2d0c; }
+img { max-width:100%; border-radius:10px; margin-top:10px; }
+.btn { background:#5a2d0c; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; }
