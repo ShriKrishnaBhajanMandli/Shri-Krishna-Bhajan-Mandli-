@@ -51,22 +51,52 @@
     <p>📱 WhatsApp: +919322335235</p>
     <p>📧 Email:kavitashukla1059@gmail.com</p>
     <button class="btn">Book Us for Event</button>
-    <!-- Event Booking Form for Shri Krishna Bhajan Mandli -->
-<div style="max-width:400px; margin:auto; padding:20px; border:1px solid #ccc; border-radius:10px; background-color:#f9f9f9;">
-  <h2 style="text-align:center; color:#4a148c;">Book Your Event</h2>
-  <form action="submit_form.php" method="POST">
-    <label for="name" style="font-weight:bold;">Name:</label><br>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:100%; padding:8px; margin:8px 0; border-radius:5px; border:1px solid #ccc;"><br>
+    <!-- Button -->
+<button class="btn" onclick="openForm()">Book Us for Event</button>
 
-    <label for="phone" style="font-weight:bold;">Phone Number:</label><br>
-    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required style="width:100%; padding:8px; margin:8px 0; border-radius:5px; border:1px solid #ccc;"><br>
-
-    <label for="event" style="font-weight:bold;">Event:</label><br>
-    <input type="text" id="event" name="event" placeholder="Enter event name" required style="width:100%; padding:8px; margin:8px 0; border-radius:5px; border:1px solid #ccc;"><br>
-
-    <button type="submit" style="width:100%; padding:10px; background-color:#4a148c; color:white; border:none; border-radius:5px; font-size:16px;">Book Event</button>
-  </form>
+<!-- Form Modal -->
+<div id="eventForm" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:10px; max-width:400px; width:90%;">
+    <h2>Book Your Event</h2>
+    <form id="bookEventForm">
+      <label>Name:</label><br>
+      <input type="text" id="name" required style="width:100%; padding:5px; margin-bottom:10px;"><br>
+      
+      <label>Phone Number:</label><br>
+      <input type="tel" id="phone" required style="width:100%; padding:5px; margin-bottom:10px;"><br>
+      
+      <label>Event:</label><br>
+      <input type="text" id="event" required style="width:100%; padding:5px; margin-bottom:10px;"><br>
+      
+      <button type="submit" style="padding:10px 20px;">Submit</button>
+      <button type="button" onclick="closeForm()" style="padding:10px 20px; margin-left:10px;">Cancel</button>
+    </form>
+  </div>
 </div>
+
+<script>
+  function openForm() {
+    document.getElementById("eventForm").style.display = "flex";
+  }
+
+  function closeForm() {
+    document.getElementById("eventForm").style.display = "none";
+  }
+
+  document.getElementById("bookEventForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Form submit default stop
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let event = document.getElementById("event").value;
+    
+    // WhatsApp link with your number
+    let message = `Hello, my name is ${name}. I want to book the event: ${event}. My contact number is ${phone}.`;
+    let whatsappURL = `https://wa.me/919322335235?text=${encodeURIComponent(message)}`; // Aapka number
+    
+    window.open(whatsappURL, "_blank"); // WhatsApp open
+    closeForm(); // Form close
+  });
+</script>
   </section>
 
   <footer>
