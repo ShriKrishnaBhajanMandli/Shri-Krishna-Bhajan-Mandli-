@@ -50,112 +50,99 @@
     <p>📞 Phone: +919322335235</p>
     <p>📱 WhatsApp: +919322335235</p>
     <p>📧 Email:kavitashukla1059@gmail.com</p>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shri Krishna Bhajan Mandli</title>
-<style>
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-}
+    <!-- Book for Event Button -->
+<button class="btn" id="bookBtn">Book Us for Event</button>
 
-.btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
+<!-- Modal Form -->
+<div id="eventFormModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background: url('https://i.ibb.co/ZYW3VTp/krishna-bg.jpg') no-repeat center/cover; padding:30px; border-radius:20px; width:90%; max-width:400px; position:relative; box-shadow:0 10px 25px rgba(0,0,0,0.4); animation:fadeIn 0.4s ease; font-family:'Arial', sans-serif; backdrop-filter: blur(5px);">
+    <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:22px; color:#ffcc00;">&times;</span>
+    
+    <div style="text-align:center; margin-bottom:20px; background:rgba(255,255,255,0.7); padding:10px; border-radius:12px;">
+      <img src="https://i.ibb.co/vdY7m6H/flute-icon.png" alt="Krishna Flute" style="width:50px; margin-bottom:10px;">
+      <h2 style="color:#ff6600; margin:0;">Shri Krishna Bhajan Mandli</h2>
+      <p style="color:#555;">Book Your Event with Us</p>
+    </div>
+    
+    <form id="eventForm" style="background:rgba(255,255,255,0.85); padding:15px; border-radius:12px;">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required placeholder="Enter your name" style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;"><br>
 
-#eventFormContainer {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    width: 300px;
-}
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" name="phone" required placeholder="Enter phone number" style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;"><br>
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-</style>
-</head>
-<body>
+      <label for="event">Event:</label><br>
+      <input type="text" id="event" name="event" required placeholder="Enter event name" style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ccc;"><br>
 
-<!-- Single Button -->
-<button class="btn" id="bookButton">Book Us for Event</button>
+      <label for="category">Category:</label><br>
+      <select id="category" name="category" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc;">
+        <option value="" disabled selected>Select Category</option>
+        <option value="Bhajan Sandhya Programs">Bhajan Sandhya Programs</option>
+        <option value="Kirtan & Satsang">Kirtan & Satsang</option>
+        <option value="Mata ki chouki">Mata ki chouki</option>
+        <option value="Shivcharcha">Shivcharcha</option>
+        <option value="Awasani maata pooja">Awasani maata pooja</option>
+        <option value="Sundarkand">Sundarkand</option>
+        <option value="Special Event Performances and Religious Gatherings">Special Event Performances and Religious Gatherings</option>
+      </select><br>
 
-<!-- Form Container -->
-<div id="eventFormContainer">
-    <form id="eventForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="event">Event Name:</label>
-        <input type="text" id="event" name="event" required>
-
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <option value="">Select Category</option>
-            <option value="Bhajan Sandhya Programs">Bhajan Sandhya Programs</option>
-            <option value="Kirtan & Satsang">Kirtan & Satsang</option>
-            <option value="Mata ki Chouki">Mata ki Chouki</option>
-            <option value="Shivcharcha">Shivcharcha</option>
-            <option value="Awasani Maata Pooja">Awasani Maata Pooja</option>
-            <option value="Sundarkand">Sundarkand</option>
-            <option value="Special Event Performances/Religious Gatherings">Special Event Performances / Religious Gatherings</option>
-        </select>
-
-        <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn" style="width:100%; background:#ff6600; color:white; padding:12px; border:none; border-radius:10px; font-size:16px; font-weight:bold; cursor:pointer;">
+        Submit
+      </button>
     </form>
+  </div>
 </div>
 
 <script>
-// Show form when button is clicked
-document.getElementById('bookButton').addEventListener('click', function() {
-    document.getElementById('eventFormContainer').style.display = 'block';
-});
+  const bookBtn = document.getElementById('bookBtn');
+  const modal = document.getElementById('eventFormModal');
+  const closeModal = document.getElementById('closeModal');
+  const form = document.getElementById('eventForm');
 
-// WhatsApp message on submit
-document.getElementById('eventForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent normal form submission
+  // Open modal
+  bookBtn.onclick = () => modal.style.display = 'flex';
 
-    // Get form values
+  // Close modal
+  closeModal.onclick = () => modal.style.display = 'none';
+  window.onclick = (e) => { if(e.target == modal) modal.style.display='none'; }
+
+  // Submit form to WhatsApp
+  form.onsubmit = (e) => {
+    e.preventDefault();
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const eventName = document.getElementById('event').value;
     const category = document.getElementById('category').value;
 
-    // WhatsApp message
-    const message = `Hello, I want to book an event:\nName: ${name}\nPhone: ${phone}\nEvent: ${eventName}\nCategory: ${category}`;
-    const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // Replace with your number with country code, e.g., 919322335235
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const message = `Booking Request:%0AName: ${name}%0APhone: ${phone}%0AEvent: ${eventName}%0ACategory: ${category}`;
+    const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // Replace with your number e.g., 919876543210
 
-    // Open WhatsApp
-    window.open(whatsappURL, '_blank');
-
-    // Optionally, reset form
-    document.getElementById('eventForm').reset();
-    document.getElementById('eventFormContainer').style.display = 'none';
-});
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    modal.style.display = 'none';
+    form.reset();
+  }
 </script>
 
-</body>
-</html>
+<style>
+  .btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background-color: #e65c00;
+  }
+  @keyframes fadeIn {
+    from {opacity:0; transform:translateY(-20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+</style>
+        
 
   <footer>
     <p>© 2025 Shri Krishna Bhajan Mandli | All Rights Reserved</p>
