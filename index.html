@@ -9,49 +9,91 @@
   <meta name="author" content="Shri Krishna Bhajan Mandli">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fffdf9; color:#333; }
+    /* Reset & box-sizing */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fffdf9; color:#333; overflow-x:hidden; }
+
+    /* Header */
     header { background:#ff6600; color:white; padding:15px 20px; position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; }
-    header h1 { margin:0; font-size:22px; }
-    nav ul { list-style:none; margin:0; padding:0; display:flex; }
+    header h1 { font-size:22px; }
+    nav ul { list-style:none; display:flex; flex-wrap:wrap; }
     nav ul li { position:relative; }
     nav ul li a { color:white; padding:10px 15px; display:block; text-decoration:none; font-weight:500; }
     nav ul li a:hover { background:#e65c00; border-radius:6px; }
     nav ul li ul { display:none; position:absolute; background:#ff6600; top:40px; left:0; min-width:180px; border-radius:6px; overflow:hidden; }
     nav ul li:hover ul { display:block; }
-    nav ul li ul li a { padding:10px; }/* Hero Banner */
-.hero { position:relative; height:80vh; background:url('https://i.ibb.co/q9yXJ5v/artistic-krishna-wallpaper.jpg') center/cover no-repeat; display:flex; justify-content:center; align-items:center; }
-.hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
-.hero-content { position:relative; color:white; text-align:center; padding:20px; }
-.hero-content h1 { font-size:48px; margin-bottom:20px; text-shadow:2px 2px 8px #000; }
-.hero-content p { font-size:20px; margin-bottom:30px; text-shadow:1px 1px 6px #000; }
+    nav ul li ul li a { padding:10px; }
 
-section { padding:50px 20px; max-width:1100px; margin:auto; }
-h2 { text-align:center; color:#ff6600; margin-bottom:20px; }
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; }
-.service-card i { font-size:35px; color:#ff6600; margin-bottom:10px; }
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 80vh;
+      background: url('https://i.ibb.co/q9yXJ5v/artistic-krishna-wallpaper.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 15px;
+    }
+    .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
+    .hero-content {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      max-width: 600px;
+    }
+    .hero-content h1 { font-size: clamp(24px, 6vw, 48px); margin-bottom:15px; text-shadow:2px 2px 8px #000; }
+    .hero-content p { font-size: clamp(14px, 3vw, 20px); margin-bottom:25px; text-shadow:1px 1px 6px #000; }
+    .hero-content .btn { width:100%; max-width:250px; padding:12px 25px; font-size:16px; }
 
-.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
-.gallery-grid img { width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    /* Sections */
+    section { padding:40px 10px; max-width:1200px; margin:auto; }
+    h2 { text-align:center; color:#ff6600; margin-bottom:20px; }
 
-.testimonial { background:#fff7f0; padding:20px; margin:15px 0; border-left:5px solid #ff6600; border-radius:8px; }
-.testimonial p { margin:0 0 10px; }
-.testimonial strong { color:#ff6600; }
+    /* Services */
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin:0 auto; }
+    .service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; }
+    .service-card i { font-size:35px; color:#ff6600; margin-bottom:10px; }
 
-footer { background:#222; color:white; text-align:center; padding:20px; }
-.btn { background:#ff6600; color:white; border:none; padding:12px 25px; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s; }
-.btn:hover { background:#e65c00; }
+    /* Gallery */
+    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:0 auto; }
+    .gallery-grid img { width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:block; }
 
-/* Modal */
-#eventFormModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000; }
-.modal-content { background:#fff; padding:25px; border-radius:15px; width:90%; max-width:400px; animation:fadeIn 0.3s ease; position:relative; }
-@keyframes fadeIn { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
-.close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; color:#ff6600; }
-input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ccc; border-radius:8px; }
+    /* Testimonials */
+    .testimonial { background:#fff7f0; padding:20px; margin:15px 0; border-left:5px solid #ff6600; border-radius:8px; }
+    .testimonial p { margin:0 0 10px; }
+    .testimonial strong { color:#ff6600; }
 
+    /* Footer */
+    footer { background:#222; color:white; text-align:center; padding:20px; }
+
+    /* Buttons */
+    .btn { background:#ff6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s; }
+    .btn:hover { background:#e65c00; }
+
+    /* Modal */
+    #eventFormModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000; }
+    .modal-content { background:#fff; padding:25px; border-radius:15px; width:95%; max-width:400px; animation:fadeIn 0.3s ease; position:relative; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+    .close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; color:#ff6600; }
+    input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ccc; border-radius:8px; }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .hero { height:60vh; padding:0 10px; }
+      .hero-content h1 { margin-bottom:10px; }
+      .hero-content p { margin-bottom:15px; }
+      .services-grid, .gallery-grid { gap:10px; }
+      section { padding:30px 10px; }
+      nav ul { flex-direction:column; }
+    }
+
+    html { scroll-behavior:smooth; }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <h1>🌸 Shri Krishna Bhajan Mandli</h1>
     <nav>
@@ -71,17 +113,30 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>  <!-- Hero Banner -->  <section class="hero">
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Shri Krishna Bhajan Mandli</h1>
       <p>Devotional Bhajans, Kirtans & Satsangs in Vasai–Virar–Nalasopara</p>
       <button class="btn" id="bookBtn">Book Us for Event</button>
     </div>
-  </section>  <section id="about">
+  </section>
+
+  <!-- About -->
+  <section id="about">
     <h2>About Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">Shri Krishna Bhajan Mandli is a devotional group from <strong>Vasai, Virar, Nalasopara</strong>, Maharashtra. We bring divine bliss through soulful Bhajans, Kirtans, Satsangs, and spiritual gatherings. With melodious voices and heartfelt devotion, we create an atmosphere of peace and spirituality at temples, homes, and community events.</p>
-  </section>  <section id="services">
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Shri Krishna Bhajan Mandli is a devotional group from <strong>Vasai, Virar, Nalasopara</strong>, Maharashtra. 
+      We bring divine bliss through soulful Bhajans, Kirtans, Satsangs, and spiritual gatherings. 
+      With melodious voices and heartfelt devotion, we create an atmosphere of peace and spirituality at temples, homes, and community events.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card"><i class="fa-solid fa-music"></i><h3>Bhajan Sandhya</h3></div>
@@ -92,7 +147,10 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
       <div class="service-card"><i class="fa-solid fa-book-open"></i><h3>Sundarkand</h3></div>
       <div class="service-card"><i class="fa-solid fa-people-group"></i><h3>Special Gatherings</h3></div>
     </div>
-  </section>  <section id="gallery">
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
       <img src="https://source.unsplash.com/600x400/?krishna,bhajan" alt="Bhajan Event">
@@ -100,7 +158,10 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
       <img src="https://source.unsplash.com/600x400/?devotional,music" alt="Devotional Music">
       <img src="https://source.unsplash.com/600x400/?indian,culture" alt="Cultural Event">
     </div>
-  </section>  <section id="areas">
+  </section>
+
+  <!-- Service Areas -->
+  <section id="areas">
     <h2>Service Areas</h2>
     <p style="text-align:center; max-width:700px; margin:auto;">We proudly organize devotional events in the following regions of Maharashtra:</p>
     <ul style="max-width:400px; margin:20px auto; line-height:1.8; font-size:18px;">
@@ -109,7 +170,10 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
       <li>🌸 Nalasopara</li>
       <li>🌸 Nearby areas of Palghar & Thane</li>
     </ul>
-  </section>  <section id="testimonials">
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
     <h2>Testimonials</h2>
     <div class="testimonial">
       <p>“Their bhajans filled our home with peace and positivity. Truly divine experience.”</p>
@@ -123,10 +187,16 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
       <p>“They made our Sundarkand path unforgettable. Everyone felt spiritually uplifted.”</p>
       <strong>- Kavita Joshi, Nalasopara</strong>
     </div>
-  </section>  <section id="contact">
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact Us</h2>
     <p style="text-align:center;">📞 <b>+91 9322335235</b> | 📱 WhatsApp Available | 📧 kavitashukla1059@gmail.com</p>
-  </section>  <!-- Modal Form -->  <div id="eventFormModal">
+  </section>
+
+  <!-- Modal Form -->
+  <div id="eventFormModal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h2 style="text-align:center; color:#ff6600;">Book Your Event</h2>
@@ -147,9 +217,13 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
         <button type="submit" class="btn" style="width:100%;">Submit</button>
       </form>
     </div>
-  </div>  <footer>
+  </div>
+
+  <footer>
     <p>© 2025 Shri Krishna Bhajan Mandli | Vasai - Virar - Nalasopara, Maharashtra</p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const bookBtn = document.getElementById('bookBtn');
     const modal = document.getElementById('eventFormModal');
     const closeModal = document.getElementById('closeModal');
@@ -171,5 +245,7 @@ input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #c
       modal.style.display = 'none';
       form.reset();
     }
-  </script></body>
+  </script>
+
+</body>
 </html>
