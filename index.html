@@ -3,124 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shri Krishna Bhajan Mandli - Vasai Nalasopara Maharashtra</title>
-  <meta name="description" content="Shri Krishna Bhajan Mandli – Devotional group from Vasai Nalasopara, Maharashtra. Available for Bhajan Sandhya, Kirtan, Satsang, Mata ki Chouki, Shivcharcha, Sundarkand, and spiritual gatherings. Contact: +919322335235">
-  <meta name="keywords" content="Vasai Bhajan Mandali, Nalasopara Bhajan Mandali, Virar Bhajan Mandali, Shri Krishna Bhajan Mandli Maharashtra, Bhajan Sandhya Vasai, Kirtan Satsang Maharashtra, Mata ki Chouki Vasai, Sundarkand Vasai">
-  <meta name="author" content="Shri Krishna Bhajan Mandli">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Shri Krishna Bhajan Mandli</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins&display=swap" rel="stylesheet">
   <style>
-    /* Reset & box-sizing */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#fffdf9; color:#333; overflow-x:hidden; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
 
-    /* Header */
-    header { background:#ff6600; color:white; padding:15px 20px; position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; }
-    header h1 { font-size:22px; }
-    nav ul { list-style:none; display:flex; flex-wrap:wrap; }
-    nav ul li { position:relative; }
-    nav ul li a { color:white; padding:10px 15px; display:block; text-decoration:none; font-weight:500; }
-    nav ul li a:hover { background:#e65c00; border-radius:6px; }
-    nav ul li ul { display:none; position:absolute; background:#ff6600; top:40px; left:0; min-width:180px; border-radius:6px; overflow:hidden; }
-    nav ul li:hover ul { display:block; }
-    nav ul li ul li a { padding:10px; }
+    /* Navbar */
+    nav {
+      position: sticky; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px; background: maroon; color: white; z-index: 100;
+    }
+    nav h1 { font-family: 'Merriweather', serif; font-size: 22px; }
+    nav ul { list-style: none; display: flex; gap: 15px; }
+    nav a { text-decoration: none; color: white; font-size: 14px; transition: color 0.3s; }
+    nav a:hover { color: gold; }
 
     /* Hero */
     .hero {
-      position: relative;
-      height: 80vh;
+      position: relative; height: 85vh;
       background: url('https://i.ibb.co/q9yXJ5v/artistic-krishna-wallpaper.jpg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 15px;
+      display: flex; justify-content: center; align-items: center; text-align: center;
     }
-    .hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
+    .hero::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
     .hero-content {
-      position: relative;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      max-width: 600px;
+      position: relative; color: white; z-index: 1; max-width: 650px; padding: 0 15px;
+      animation: fadeIn 2s ease;
     }
-    .hero-content h1 { font-size: clamp(24px, 6vw, 48px); margin-bottom:15px; text-shadow:2px 2px 8px #000; }
-    .hero-content p { font-size: clamp(14px, 3vw, 20px); margin-bottom:25px; text-shadow:1px 1px 6px #000; }
-    .hero-content .btn { width:100%; max-width:250px; padding:12px 25px; font-size:16px; }
+    .hero-content h2 { font-size: clamp(26px, 6vw, 50px); font-family: 'Merriweather', serif; margin-bottom: 15px; }
+    .hero-content p { font-size: clamp(14px, 3vw, 20px); margin-bottom: 25px; }
+    .btn { padding: 12px 25px; font-size: 16px; background: gold; color: maroon;
+      border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: #ffcc00; }
 
     /* Sections */
-    section { padding:40px 10px; max-width:1200px; margin:auto; }
-    h2 { text-align:center; color:#ff6600; margin-bottom:20px; }
+    section { padding: 60px 20px; text-align: center; }
+    section h2 { font-family: 'Merriweather', serif; font-size: 28px; color: maroon; margin-bottom: 30px; }
 
     /* Services */
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin:0 auto; }
-    .service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; }
-    .service-card i { font-size:35px; color:#ff6600; margin-bottom:10px; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px;
+    }
+    .service-card {
+      background: #f9f9f9; padding: 25px; border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s;
+    }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card span { font-size: 40px; display: block; margin-bottom: 10px; }
 
     /* Gallery */
-    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:0 auto; }
-    .gallery-grid img { width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:block; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 15px;
+    }
+    .gallery-grid img {
+      width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 2000;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; border: 4px solid white; border-radius: 10px; }
 
     /* Testimonials */
-    .testimonial { background:#fff7f0; padding:20px; margin:15px 0; border-left:5px solid #ff6600; border-radius:8px; }
-    .testimonial p { margin:0 0 10px; }
-    .testimonial strong { color:#ff6600; }
-
-    /* Footer */
-    footer { background:#222; color:white; text-align:center; padding:20px; }
-
-    /* Buttons */
-    .btn { background:#ff6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s; }
-    .btn:hover { background:#e65c00; }
-
-    /* Modal */
-    #eventFormModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000; }
-    .modal-content { background:#fff; padding:25px; border-radius:15px; width:95%; max-width:400px; animation:fadeIn 0.3s ease; position:relative; }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
-    .close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; color:#ff6600; }
-    input, select { width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ccc; border-radius:8px; }
-
-    /* Responsive */
-    @media (max-width:768px){
-      .hero { height:60vh; padding:0 10px; }
-      .hero-content h1 { margin-bottom:10px; }
-      .hero-content p { margin-bottom:15px; }
-      .services-grid, .gallery-grid { gap:10px; }
-      section { padding:30px 10px; }
-      nav ul { flex-direction:column; }
+    .testimonials { display: grid; gap: 20px; max-width: 800px; margin: auto; }
+    .testimonial-card {
+      background: #fff3e0; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    html { scroll-behavior:smooth; }
+    /* Contact */
+    .contact form { display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin: auto; }
+    .contact input, .contact textarea {
+      padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;
+    }
+    .contact button { background: maroon; color: white; font-size: 16px; }
+
+    /* Footer */
+    footer {
+      background: #222; color: #eee; text-align: center; padding: 20px; font-size: 14px;
+    }
+    footer a { color: gold; text-decoration: none; margin: 0 5px; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width:768px){
+      nav ul { display: none; } /* mobile menu later if needed */
+      .hero { height: 65vh; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>🌸 Shri Krishna Bhajan Mandli</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services ▾</a>
-          <ul>
-            <li><a href="#services">Bhajan Sandhya</a></li>
-            <li><a href="#services">Kirtan & Satsang</a></li>
-            <li><a href="#services">Mata ki Chowki</a></li>
-            <li><a href="#services">Sundarkand</a></li>
-          </ul>
-        </li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#areas">Service Areas</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav>
+    <h1>🌸 Shri Krishna Bhajan Mandli 🌸</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Shri Krishna Bhajan Mandli</h1>
-      <p>Devotional Bhajans, Kirtans & Satsangs in Vasai–Virar–Nalasopara</p>
+      <h2>Devotion Through Bhajans & Kirtans</h2>
+      <p>Bringing soulful Krishna Bhajans, Kirtans & Satsangs in Vasai–Virar–Nalasopara</p>
       <button class="btn" id="bookBtn">Book Us for Event</button>
     </div>
   </section>
@@ -128,24 +128,17 @@
   <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      Shri Krishna Bhajan Mandli is a devotional group from <strong>Vasai, Virar, Nalasopara</strong>, Maharashtra. 
-      We bring divine bliss through soulful Bhajans, Kirtans, Satsangs, and spiritual gatherings. 
-      With melodious voices and heartfelt devotion, we create an atmosphere of peace and spirituality at temples, homes, and community events.
-    </p>
+    <p>Our Bhajan Mandli spreads peace and devotion through soulful Krishna bhajans, kirtans, and satsangs. We aim to connect hearts to spirituality and divine love.</p>
   </section>
 
   <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-grid">
-      <div class="service-card"><i class="fa-solid fa-music"></i><h3>Bhajan Sandhya</h3></div>
-      <div class="service-card"><i class="fa-solid fa-dharmachakra"></i><h3>Kirtan & Satsang</h3></div>
-      <div class="service-card"><i class="fa-solid fa-hand-holding-heart"></i><h3>Mata ki Chowki</h3></div>
-      <div class="service-card"><i class="fa-solid fa-om"></i><h3>Shivcharcha</h3></div>
-      <div class="service-card"><i class="fa-solid fa-seedling"></i><h3>Awasani Mata Pooja</h3></div>
-      <div class="service-card"><i class="fa-solid fa-book-open"></i><h3>Sundarkand</h3></div>
-      <div class="service-card"><i class="fa-solid fa-people-group"></i><h3>Special Gatherings</h3></div>
+      <div class="service-card"><span>🎶</span> Bhajan Sandhya</div>
+      <div class="service-card"><span>🙏</span> Kirtan Mandli</div>
+      <div class="service-card"><span>🌸</span> Satsang Programs</div>
+      <div class="service-card"><span>🎤</span> Live Events</div>
     </div>
   </section>
 
@@ -153,99 +146,64 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <img src="https://source.unsplash.com/600x400/?krishna,bhajan" alt="Bhajan Event">
-      <img src="https://source.unsplash.com/600x400/?temple,india" alt="Temple Program">
-      <img src="https://source.unsplash.com/600x400/?devotional,music" alt="Devotional Music">
-      <img src="https://source.unsplash.com/600x400/?indian,culture" alt="Cultural Event">
+      <img src="https://i.ibb.co/3Bt7Dwp/gallery1.jpg" alt="Event 1" onclick="openLightbox(this.src)">
+      <img src="https://i.ibb.co/4S8vcnZ/gallery2.jpg" alt="Event 2" onclick="openLightbox(this.src)">
+      <img src="https://i.ibb.co/3dL6WkP/gallery3.jpg" alt="Event 3" onclick="openLightbox(this.src)">
     </div>
   </section>
 
-  <!-- Service Areas -->
-  <section id="areas">
-    <h2>Service Areas</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">We proudly organize devotional events in the following regions of Maharashtra:</p>
-    <ul style="max-width:400px; margin:20px auto; line-height:1.8; font-size:18px;">
-      <li>🌸 Vasai</li>
-      <li>🌸 Virar</li>
-      <li>🌸 Nalasopara</li>
-      <li>🌸 Nearby areas of Palghar & Thane</li>
-    </ul>
-  </section>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Expanded View">
+  </div>
 
   <!-- Testimonials -->
   <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial">
-      <p>“Their bhajans filled our home with peace and positivity. Truly divine experience.”</p>
-      <strong>- Meera Sharma, Vasai</strong>
-    </div>
-    <div class="testimonial">
-      <p>“Excellent performance during our Mata ki Chowki. The whole mandli sang with such devotion.”</p>
-      <strong>- Rajesh Verma, Virar</strong>
-    </div>
-    <div class="testimonial">
-      <p>“They made our Sundarkand path unforgettable. Everyone felt spiritually uplifted.”</p>
-      <strong>- Kavita Joshi, Nalasopara</strong>
+    <h2>What Devotees Say</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">"A divine experience full of peace and devotion!" – Radha Ji</div>
+      <div class="testimonial-card">"Their bhajans touch the soul." – Mohan Ji</div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p style="text-align:center;">📞 <b>+91 9322335235</b> | 📱 WhatsApp Available | 📧 kavitashukla1059@gmail.com</p>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p style="margin-top:15px;">📞 9322335235 | 📧 Kavitashukla1059@gmail.com</p>
   </section>
 
-  <!-- Modal Form -->
-  <div id="eventFormModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2 style="text-align:center; color:#ff6600;">Book Your Event</h2>
-      <form id="eventForm">
-        <input type="text" id="name" name="name" required placeholder="Enter your name">
-        <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
-        <input type="text" id="event" name="event" required value="Bhajan">
-        <select id="category" name="category" required>
-          <option value="" disabled selected>Select Category</option>
-          <option>Bhajan Sandhya</option>
-          <option>Kirtan & Satsang</option>
-          <option>Mata ki Chowki</option>
-          <option>Shivcharcha</option>
-          <option>Awasani Mata Pooja</option>
-          <option>Sundarkand</option>
-          <option>Special Gatherings</option>
-        </select>
-        <button type="submit" class="btn" style="width:100%;">Submit</button>
-      </form>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Shri Krishna Bhajan Mandli | Vasai - Virar - Nalasopara, Maharashtra</p>
+    <p>&copy; 2025 Shri Krishna Bhajan Mandli | All Rights Reserved</p>
+    <p>
+      <a href="#about">About</a> | 
+      <a href="#services">Services</a> | 
+      <a href="#gallery">Gallery</a> | 
+      <a href="#contact">Contact</a>
+    </p>
   </footer>
 
   <script>
-    const bookBtn = document.getElementById('bookBtn');
-    const modal = document.getElementById('eventFormModal');
-    const closeModal = document.getElementById('closeModal');
-    const form = document.getElementById('eventForm');
-
-    bookBtn.onclick = () => modal.style.display = 'flex';
-    closeModal.onclick = () => modal.style.display = 'none';
-    window.onclick = (e) => { if(e.target == modal) modal.style.display='none'; }
-
-    form.onsubmit = (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const eventName = document.getElementById('event').value;
-      const category = document.getElementById('category').value;
-      const message = `Booking Request:%0AName: ${name}%0APhone: ${phone}%0AEvent: ${eventName}%0ACategory: ${category}`;
-      const whatsappNumber = '919322335235';
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-      modal.style.display = 'none';
-      form.reset();
+    // Lightbox
+    function openLightbox(src){
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
     }
-  </script>
+    function closeLightbox(){
+      document.getElementById('lightbox').style.display = 'none';
+    }
 
+    // WhatsApp booking
+    document.getElementById('bookBtn').onclick = function(){
+      let msg = "Hello, I would like to book Shri Krishna Bhajan Mandli for an event.";
+      window.open(`https://wa.me/919322335235?text=${encodeURIComponent(msg)}`, '_blank');
+    };
+  </script>
 </body>
-</html>
+                                                                     </html>
